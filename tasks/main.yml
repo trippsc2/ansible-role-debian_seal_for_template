@@ -3,6 +3,7 @@
   become: true
   ansible.builtin.hostname:
     name: "{{ debian_target_hostname }}"
+    use: debian
 
 - name: Add SSH public key to vagrant user
   when:
