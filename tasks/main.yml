@@ -80,12 +80,6 @@
         group: root
         mode: '0644'
 
-    - name: Disable NetworkManager-wait-online.service
-      become: true
-      ansible.builtin.systemd_service:
-        name: NetworkManager-wait-online.service
-        enabled: false
-
 - name: Perform autoremove
   become: true
   ansible.builtin.apt:
@@ -140,6 +134,8 @@
   ansible.builtin.file:
     path: "{{ item }}"
     state: absent
+  notify:
+    - _debian_regenerate_ssh_host_keys
 
 - name: Remove netplan machine ID
   become: true
