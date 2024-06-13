@@ -1,6 +1,6 @@
 <!-- BEGIN_ANSIBLE_DOCS -->
 
-# Ansible Role: trippsc2.debian_seal_for_template
+# Ansible Role: trippsc2.template.debian
 This role seals a Debian machine for use as a template.
 
 ## Requirements
